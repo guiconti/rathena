@@ -1,0 +1,20 @@
+version: '3'
+
+# Define services
+services:
+  # Mysql Service
+  mysql:
+    image: 'mysql:latest'
+    restart: always
+    environment:
+      MYSQL_USER: ragnarok
+      MYSQL_PASSWORD: ragnarok
+      MYSQL_DATABASE: ragnarok
+      MYSQL_ROOT_PASSWORD: ragnarok
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+
+# Networks to be created for communication between containers
+networks:
+  backend:

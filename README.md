@@ -70,3 +70,23 @@ Details on how to contribute to rAthena can be found in [CONTRIBUTING.md](https:
 
 ## 6. License
 Copyright (c) rAthena Development Team - Licensed under [GNU General Public License v3.0](https://github.com/rathena/rathena/blob/master/LICENSE)
+
+## 7. Compile
+### Windows
+cmd.exe -/c ".\compile.bat"
+
+### Linux/MacOS
+./configure && make clean && make server
+#### You might need
+chmod a+x login-server && chmod a+x char-server && chmod a+x map-server && chmod a+x web-server
+
+
+## 8. Run
+### Windows
+docker-compuse up
+cmd.exe -/c ".\runserver.bat"
+
+### Linux/MacOS
+./athena-start start
+./athena-start stop
+./athena-start restart
