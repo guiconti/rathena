@@ -6,14 +6,12 @@ services:
   mysql:
     image: 'mysql:latest'
     restart: always
-    environment:
-      MYSQL_USER: ragnarok
-      MYSQL_PASSWORD: ragnarok
-      MYSQL_DATABASE: ragnarok
-      MYSQL_ROOT_PASSWORD: ragnarok
+    env_file: .env
     command: --default-authentication-plugin=mysql_native_password
     ports:
       - "3306:3306"
+    volumes:
+      - ./sql-files:/sql-files
 
 # Networks to be created for communication between containers
 networks:
